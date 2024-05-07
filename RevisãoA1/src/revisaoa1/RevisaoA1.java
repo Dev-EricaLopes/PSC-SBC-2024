@@ -7,7 +7,9 @@ package revisaoa1;
 import java.io.IOException;
 import java.util.Scanner;
 import static revisaoa1.CalculadoraIMC.PesoIdeal;
+import static revisaoa1.NumerosNaturais.NumeroNatural;
 import static revisaoa1.ParImpar.ParImpar;
+import static revisaoa1.Temperatura.Temperatura;
 
 /**
  *
@@ -18,7 +20,7 @@ public class RevisaoA1 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
         
@@ -37,18 +39,47 @@ public class RevisaoA1 {
             System.out.println(" 1 - Calculadora");
             System.out.println(" 2 - Calculadora Peso Ideal");
             System.out.println(" 3 - Par ou Impar");
+            System.out.println(" 4 - Numeros Naturais");
+            System.out.println(" 5 - Temperatura");
             System.out.println("");
             System.out.println("*******************************");
 
             System.out.print("Digite o numero do exercicio: ");
             ex = sc.nextInt();
-
+/*
             if(ex == 1)
                 calc.Calcula();
             if (ex == 2)
                 PesoIdeal();
             if (ex == 3)
                 ParImpar();
+            if (ex == 4)
+                NumeroNatural();
+            if (ex == 5)
+                Temperatura();
+       */     
+            switch(ex)
+            {
+                case 1:
+                    calc.Calcula();
+                    break;
+                case 2:
+                    PesoIdeal();
+                    break;           
+                case 3:
+                    ParImpar();
+                    break;  
+                case 4:
+                    NumeroNatural();
+                    break;  
+                case 5:
+                    Temperatura();
+                    break;  
+                default:
+                    System.out.println("Exercicio Invalido!!!");
+            }
+            
+            
             
             System.out.print("Deseja Continuar (1- Sim/ 99-Nao) : ");
             resp = sc.nextInt();
