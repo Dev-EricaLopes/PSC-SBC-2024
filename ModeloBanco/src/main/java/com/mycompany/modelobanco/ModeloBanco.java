@@ -4,6 +4,8 @@
 
 package com.mycompany.modelobanco;
 
+import DAO.ConnectionFactory;
+
 /**
  *
  * @author erica
@@ -11,6 +13,9 @@ package com.mycompany.modelobanco;
 public class ModeloBanco {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Teste de Conexao...");
+        
+        ConnectionFactory factory = new ConnectionFactory();
+        factory.obtemConexao();
     }
 }
