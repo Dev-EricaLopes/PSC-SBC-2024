@@ -4,6 +4,7 @@
  */
 package Tela;
 
+import DAO.ConnectionFactory;
 import javax.swing.JOptionPane;
 
 /**
@@ -102,6 +103,8 @@ public class LoginTela extends javax.swing.JFrame {
         if ("adm".equals(login) && "adm".equals(senha))
         {
             JOptionPane.showMessageDialog(null, "Seja bem vindo!!!"); 
+            ConnectionFactory factory = new ConnectionFactory();
+            factory.obtemConexao();
             abrirTelaMenu();
         }
         

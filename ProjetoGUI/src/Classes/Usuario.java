@@ -1,6 +1,11 @@
 
 package Classes;
 
+import DAO.ConnectionFactory;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
+
 public class Usuario {
     
     private String nome;
@@ -59,5 +64,28 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+    
+    public void inserir(){
+    
+    String sql = "INSERT INTO tb_pessoa(nome, fone, email) VALUES (?, ?, ?)";
+    ConnectionFactory factory = new ConnectionFactory();
+    
+    try (Connection c = factory.obtemConexao()){
+        PreparedStatement ps = c.prepareStatement(sql);
+        ps.setString(1, nome);
+        ps.setString(2, usuario);
+        ps.setString(3, email);
+        ps.execute();
+        
+        JOptionPane.showMessageDialog(null, "Usuário Incluído com Sucesso!");
+    }
+    catch (Exception e){
+        e.printStackTrace();
+    }
+    }
+    
+    
+    
+    
     
 }

@@ -4,6 +4,7 @@
  */
 package Tela;
 
+import Classes.Usuario;
 import javax.swing.JOptionPane;
 
 /**
@@ -60,6 +61,11 @@ public class TelaCadUsu extends javax.swing.JFrame {
         jLabel1.setBounds(80, 40, 53, 16);
 
         txtNome.setText("txtNome");
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeActionPerformed(evt);
+            }
+        });
         getContentPane().add(txtNome);
         txtNome.setBounds(180, 40, 182, 22);
 
@@ -181,13 +187,23 @@ public class TelaCadUsu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
- 
+        Usuario usu = new Usuario();
+        
+        usu.setNome(txtNome.getText());
+        usu.setEmail(txtEmail.getText());
+        usu.setUsuario(txtUsuario.getText());
+        
+        usu.inserir();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jMenu2ActionPerformed
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
 
     /**
      * @param args the command line arguments
