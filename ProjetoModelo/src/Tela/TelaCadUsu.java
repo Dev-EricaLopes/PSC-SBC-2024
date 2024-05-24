@@ -5,6 +5,7 @@
 package Tela;
 
 import Classes.Usuario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -43,6 +44,8 @@ public class TelaCadUsu extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        Excluir = new javax.swing.JButton();
+        Consultar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -84,9 +87,9 @@ public class TelaCadUsu extends javax.swing.JFrame {
         getContentPane().add(txtSenha);
         txtSenha.setBounds(180, 160, 180, 22);
 
-        ckAdm.setText("Administrador  ");
+        ckAdm.setText("Administrador");
         getContentPane().add(ckAdm);
-        ckAdm.setBounds(80, 270, 160, 25);
+        ckAdm.setBounds(80, 260, 160, 25);
 
         txtConfSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,14 +103,14 @@ public class TelaCadUsu extends javax.swing.JFrame {
         getContentPane().add(jLabel5);
         jLabel5.setBounds(80, 200, 90, 16);
 
-        ckSenha.setText("Exibir Senha  ");
+        ckSenha.setText("Exibir Senha");
         ckSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ckSenhaActionPerformed(evt);
             }
         });
         getContentPane().add(ckSenha);
-        ckSenha.setBounds(80, 240, 180, 25);
+        ckSenha.setBounds(80, 230, 180, 25);
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(50, 60, 0, 2);
 
@@ -118,7 +121,7 @@ public class TelaCadUsu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(290, 310, 80, 50);
+        jButton1.setBounds(30, 310, 90, 50);
 
         jButton2.setText("Alterar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +130,15 @@ public class TelaCadUsu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(130, 310, 79, 50);
+        jButton2.setBounds(250, 310, 90, 50);
+
+        Excluir.setText("Excluir");
+        getContentPane().add(Excluir);
+        Excluir.setBounds(140, 310, 90, 50);
+
+        Consultar.setText("Consultar");
+        getContentPane().add(Consultar);
+        Consultar.setBounds(360, 310, 90, 50);
 
         jMenu1.setText("Arquivo");
 
@@ -155,29 +166,13 @@ public class TelaCadUsu extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        setSize(new java.awt.Dimension(486, 436));
+        setSize(new java.awt.Dimension(483, 436));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtConfSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConfSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtConfSenhaActionPerformed
-
-    private void ckSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckSenhaActionPerformed
-
-                if (ckSenha.isSelected()) {
-                    // Exibe a senha
-                    txtSenha.setEchoChar((char) 0);
-                    txtConfSenha.setEchoChar((char) 0);
-                } else {
-                    // Oculta a senha
-                    txtSenha.setEchoChar('*');
-                    txtConfSenha.setEchoChar('*');
-
-                }
-        
-        
-    }//GEN-LAST:event_ckSenhaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -213,6 +208,21 @@ public class TelaCadUsu extends javax.swing.JFrame {
         
         usu.alterar();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void ckSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckSenhaActionPerformed
+
+        if (ckSenha.isSelected()) {
+            // Exibe a senha
+            txtSenha.setEchoChar((char) 0);
+            txtConfSenha.setEchoChar((char) 0);
+        } else {
+            // Oculta a senha
+            txtSenha.setEchoChar('*');
+            txtConfSenha.setEchoChar('*');
+
+        }
+
+    }//GEN-LAST:event_ckSenhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -250,6 +260,8 @@ public class TelaCadUsu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Consultar;
+    private javax.swing.JButton Excluir;
     private javax.swing.JCheckBox ckAdm;
     private javax.swing.JCheckBox ckSenha;
     private javax.swing.JButton jButton1;
