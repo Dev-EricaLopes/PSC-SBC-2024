@@ -64,20 +64,23 @@ public class Listar extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(316, 316, 316))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
-                .addComponent(jButton1)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                .addGap(11, 11, 11))
         );
 
         pack();
@@ -90,21 +93,23 @@ public class Listar extends javax.swing.JFrame {
                             (new String[]{"Nome", "Email", "Usuario"}, 0);
         
         String sql = "SELECT * FROM tb_pessoa";
+       // String sql = "SELECT * FROM tb_pessoa where usuario = ?";
         ConnectionFactory factory = new ConnectionFactory();
         
         try (Connection c = factory.obtemConexao()){
         PreparedStatement ps = c.prepareStatement(sql);
+      //  ps.setString(1, jfnomeusu.getText());
         ResultSet rs = ps.executeQuery();
         
         while (rs.next()){
             
-            String nome = rs.getString("nome");
-            String email = rs.getString("email");
-            String usuario = rs.getString("usuario");
+            String txtnome = rs.getString("nome");
+            String txtemail = rs.getString("email");
+            String txtusuario = rs.getString("usuario");
             
-            System.out.println("---> "+nome);
+            System.out.println("---> "+txtnome);
             
-            model.addRow(new Object[]{nome, email, usuario});
+            model.addRow(new Object[]{txtnome, txtemail, txtusuario});
             }
         }
         catch (Exception e){

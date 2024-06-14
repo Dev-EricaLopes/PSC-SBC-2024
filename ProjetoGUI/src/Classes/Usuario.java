@@ -89,7 +89,8 @@ public class Usuario {
     
     public void alterar(){
     
-    String sql = "update tb_pessoa set nome = ?, email= ?, senha= ? where usuario=?";
+    String sql = "update tb_pessoa set nome = ?, email= ?, "
+                  + "senha= ? where usuario=?";
     ConnectionFactory factory = new ConnectionFactory();
     
     try (Connection c = factory.obtemConexao()){
@@ -108,17 +109,13 @@ public class Usuario {
     }
     
     public void listar (){
-        //1: Definir o comando SQL
         String sql = "SELECT * FROM tb_pessoa";
-        //2: Abrir uma conexão
         ConnectionFactory factory = new ConnectionFactory();
+        
+        
         try (Connection c = factory.obtemConexao()){
-        //3: Pré compila o comando
         PreparedStatement ps = c.prepareStatement(sql);
-        //4: Executa o comando e guarda
-        //o resultado em um ResultSet
         ResultSet rs = ps.executeQuery();
-        //5: itera sobre o resultado
         
         while (rs.next()){
             int codigo = rs.getInt("codigo");
@@ -131,4 +128,6 @@ public class Usuario {
         }
     }
     
+    
+
 }

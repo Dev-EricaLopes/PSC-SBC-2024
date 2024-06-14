@@ -3,8 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/USJT/2024-1/GitHub/PSC-SBC-2024/ProjetoGUI/src/DAO/ConnectionFactory.java</file>
             <file>file:/D:/USJT/2024-1/GitHub/PSC-SBC-2024/ProjetoGUI/src/Classes/Usuario.java</file>
+            <file>file:/D:/USJT/2024-1/GitHub/PSC-SBC-2024/ProjetoGUI/src/Tela/TelaCadUsu.java</file>
+            <file>file:/D:/USJT/2024-1/GitHub/PSC-SBC-2024/ProjetoGUI/src/SQL/Script.sql</file>
             <file>file:/D:/USJT/2024-1/GitHub/PSC-SBC-2024/ProjetoGUI/src/Tela/LoginTela.java</file>
+            <file>file:/D:/USJT/2024-1/GitHub/PSC-SBC-2024/ProjetoGUI/src/Tela/TelaMenu.java</file>
+            <file>file:/D:/USJT/2024-1/GitHub/PSC-SBC-2024/ProjetoGUI/src/Tela/Listar.java</file>
         </group>
     </open-files>
 </project-private>
